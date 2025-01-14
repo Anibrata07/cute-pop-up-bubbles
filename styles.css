@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #f0f8ff;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.bubble {
+    position: absolute;
+    background-color: rgba(255, 105, 180, 0.7);
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    opacity: 0.8;
+    animation: float 5s infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
