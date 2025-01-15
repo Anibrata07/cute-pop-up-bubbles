@@ -7,6 +7,12 @@ const phrases = [
     
 ];
 
+// Array of online audio file URLs
+const audioFiles = [
+    'music/pop-39222.mp3',
+    
+];
+
 function createBubble() {
     const bubble = document.createElement('div');
     bubble.className = 'bubble';
@@ -33,6 +39,11 @@ function createBubble() {
     bubble.style.animationDuration = `${duration}s`;
 
     bubbleContainer.appendChild(bubble);
+
+    // Play a random sound when a bubble is created
+    const randomAudioFile = audioFiles[Math.floor(Math.random() * audioFiles.length)];
+    const audio = new Audio(randomAudioFile); // Create a new audio object
+    audio.play(); // Play the audio
 
     // Remove bubble after animation ends
     bubble.addEventListener('animationend', () => {
